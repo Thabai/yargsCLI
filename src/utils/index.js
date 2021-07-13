@@ -1,15 +1,3 @@
-// console.log(yargs.argv.movie);
-
-// const add = () => {
-//     if(command === "add") {
-//         const entry = {title: yargs.argv.movie, actor: yargs.argv.actor}
-//         console.log(entry);
-//     }
-// };
-
-// add ();
-
-  
 const fs = require('fs');
 
 exports.add = (movieList, movie, year) => {
@@ -51,7 +39,7 @@ exports.update = (movieList, entryTitle, entryYear, newTitle, newYear) => {
         });
         if (updateIndex !== undefined) {
             movieList[updateIndex] = {title: newTitle, year: newYear};
-            let stringMovieList = JSON.stringify(movieList);
+            let stringMovieList = JSON.stringify(movieList.flat(1));
             fs.writeFileSync('./films.json', stringMovieList);
             console.log(movieList)
         }
