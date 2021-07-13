@@ -12,8 +12,8 @@ let movieList = [];
 
 try {
     let tempJson = fs.readFileSync('./films.json');
-    let tempNetflix = JSON.parse(tempJson)
-    movieList = tempNetflix;
+    let tempFilm = JSON.parse(tempJson)
+    movieList = tempFilm;
 
 } catch (error) {
     movieList = [];
